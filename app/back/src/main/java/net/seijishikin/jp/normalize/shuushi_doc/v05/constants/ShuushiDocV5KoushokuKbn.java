@@ -17,7 +17,7 @@ public final class ShuushiDocV5KoushokuKbn {
     /** 候補者 */
     public static final String KOUHOSHA_TEXT = "候補者";
 
-    public ShuushiDocV5KoushokuKbn() {
+    private ShuushiDocV5KoushokuKbn() {
 
     }
 
