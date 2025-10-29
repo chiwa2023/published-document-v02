@@ -46,8 +46,10 @@ jobs:
     # For PRs: only if not from a fork
     # For comments: only if user types @gemini-cli and is OWNER/MEMBER/COLLABORATOR
     # For issues: only on open/reopen
+    runs-on: 'ubuntu-latest'
     permissions:
       contents: 'write'
+      id-token: 'write'
       issues: 'write'
       pull-requests: 'write'
     outputs:
@@ -109,15 +111,6 @@ jobs:
           gh issue comment "${ISSUE_NUMBER}" \
             --body "${MESSAGE}" \
             --repo "${REPOSITORY}"
-
-    permissions:
-      contents: 'write'
-      id-token: 'write'
-      issues: 'write'
-      pull-requests: 'write'
-    with:
-      additional_context: '${{ needs.dispatch.outputs.additional_context }}'
-    secrets: 'inherit'
 
   triage:
     needs: 'dispatch'
