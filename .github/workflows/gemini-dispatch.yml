@@ -66,6 +66,8 @@ jobs:
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
+          owner: 'google'
+          repository: 'gemini-ci'
           permission-contents: 'write'
           permission-issues: 'write'
           permission-pull-requests: 'write'
@@ -176,6 +178,8 @@ jobs:
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
+          owner: 'google'
+          repository: 'gemini-ci'
           permission-contents: 'read'
           permission-issues: 'write'
           permission-pull-requests: 'write'
