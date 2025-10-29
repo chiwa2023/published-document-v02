@@ -1,4 +1,4 @@
-export default class ShuushiDocV5KatsudouKuikiConstants {
+export class ShuushiDocV5KatsudouKuikiConstants {
 
     /** 2以上の都道府県の区域等 */
     static readonly COMPLEX_PREF = 1;

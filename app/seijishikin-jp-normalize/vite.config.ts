@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'vue-component-dts',
+      name: 'index',
       fileName: 'index',
       formats: ['es', 'umd']
     },
