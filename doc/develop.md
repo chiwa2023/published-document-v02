@@ -11,8 +11,85 @@
 4. vitest導入 `npm i -D vitest`
 
 5. ライブラリ化プラグインvite-plugin-dts導入 `npm install -D vite-plugin-dts`
-   
-- を編集する
+
+6. ライブラリ化をするために設定ファイルを追加・編集する
+
+- a. packaage.jsonを編集する
+
+```
+-  "type": "module",
++  "type": "commonjs",
++  "main": "./dist/index.umd.cjs",
++  "module": "./dist/index.mjs",
++  "types": "./dist/index.d.ts",
++  "files": [
++    "dist"
++  ],
+
+...
+
+-  "dependencies": {
+-    "vue": "^x.y.z"
+-  },
++  "dependencies": {},
++  "peerDependencies": {
++    "vue": "^x.y.z"
++  },
+
+```
+
+- b. tsconfig.jsonを編集する
+
+```
+-  ]
++  ],
++  "declaration": true,
++   "compilerOptions": {
++    "emitDeclarationOnly": true,
++    "declaration": true,
++    "declarationDir": "./types",
++    "noEmit": true,
++ },
+
+
+
+```
+
+- c. vite.config.tsを編集する
+
+```
+...
++ import { resolve } from 'path'
++ import dts from 'vite-plugin-dts'
+
+-  plugins: [vue()],
++  build: {
++    lib: {
++      entry: resolve(__dirname, 'src/index.ts'),
++      name: 'index',
++      fileName: 'index',
++      formats: ['es', 'umd']
++    },
++  },
++  plugins: [vue(), dts({tsconfigPath: resolve(__dirname, "tsconfig.app.json")})],
+
+```
+
+- d. /src/index.tsを追加する
+
+  ```
+  export * from './components'
+
+  ```
+
+- e. /src/components/index.tsを追加する
+
+```
+# 記載例
+import HelloMessage123 from './HelloWorld.vue'
+
+export { HelloMessage123 }
+```
   
 ### 2. back側
 
