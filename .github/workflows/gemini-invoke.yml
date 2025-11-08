@@ -37,6 +37,11 @@ jobs:
           permission-issues: 'write'
           permission-pull-requests: 'write'
 
+      - name: 'Setup Google Cloud CLI'
+        uses: 'google-github-actions/setup-gcloud@v2'
+        with:
+          project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
+
       - name: 'Run Gemini CLI'
         id: 'run_gemini'
         uses: 'google-github-actions/run-gemini-cli@v0' # ratchet:exclude
