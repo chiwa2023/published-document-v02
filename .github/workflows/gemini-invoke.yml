@@ -37,6 +37,12 @@ jobs:
           permission-issues: 'write'
           permission-pull-requests: 'write'
 
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: '${{ vars.GCP_WIF_PROVIDER }}'
+          service_account: '${{ vars.SERVICE_ACCOUNT_EMAIL }}'
+
       - name: 'Setup Google Cloud CLI'
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
@@ -67,7 +73,7 @@ jobs:
           settings: |-
             {
               "model": {
-                "maxSessionTurns": 25
+                "maxSessionTurns": 50
               },
               "telemetry": {
                 "enabled": ${{ toJSON(vars.GOOGLE_CLOUD_PROJECT != '') }},
