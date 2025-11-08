@@ -65,7 +65,7 @@ jobs:
                 "maxSessionTurns": 25
               },
               "telemetry": {
-                "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
+                "enabled": ${{ toJSON(vars.GOOGLE_CLOUD_PROJECT != '') }},
                 "target": "gcp"
               },
               "mcpServers": {
