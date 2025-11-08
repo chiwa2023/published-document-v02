@@ -25,8 +25,6 @@ jobs:
       issues: 'write'
       pull-requests: 'write'
     steps:
-      - name: 'Checkout repository'
-        uses: 'actions/checkout@v4'
       - name: 'Mint identity token'
         id: 'mint_identity_token'
         if: |-
@@ -38,17 +36,6 @@ jobs:
           permission-contents: 'write'
           permission-issues: 'write'
           permission-pull-requests: 'write'
-
-      - name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v2'
-        with:
-          workload_identity_provider: '${{ vars.GCP_WIF_PROVIDER }}'
-          service_account: '${{ vars.SERVICE_ACCOUNT_EMAIL }}'
-
-      - name: 'Setup Google Cloud CLI'
-        uses: 'google-github-actions/setup-gcloud@v2'
-        with:
-          project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
 
       - name: 'Run Gemini CLI'
         id: 'run_gemini'
@@ -75,10 +62,10 @@ jobs:
           settings: |-
             {
               "model": {
-                "maxSessionTurns": 50
+                "maxSessionTurns": 25
               },
               "telemetry": {
-                "enabled": ${{ toJSON(vars.GOOGLE_CLOUD_PROJECT != '') }},
+                "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
                 "target": "gcp"
               },
               "mcpServers": {

@@ -18,11 +18,16 @@ defaults:
 
 jobs:
   triage:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    runs-on: 'ubuntu-latest'
+    timeout-minutes: 7
+    outputs:
+      available_labels: '${{ steps.get_labels.outputs.available_labels }}'
+      selected_labels: '${{ env.SELECTED_LABELS }}'
     permissions:
-      contents: read
-      issues: read
+      contents: 'read'
+      id-token: 'write'
+      issues: 'read'
+      pull-requests: 'read'
     steps:
       - name: 'Get repository labels'
         id: 'get_labels'
