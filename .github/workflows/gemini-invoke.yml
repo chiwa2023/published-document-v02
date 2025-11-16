@@ -53,6 +53,7 @@ jobs:
           gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
           gcp_workload_identity_provider: 'projects/425794833566/locations/global/workloadIdentityPools/github-pool/providers/github-actions-provider'
           gcp_service_account: 'PublishDocumentAccount@gemini-api-publish-document.iam.gserviceaccount.com'
+          gcp_location: 'us-central1'
           gemini_cli_version: '${{ vars.GEMINI_CLI_VERSION }}'
           gemini_debug: '${{ fromJSON(vars.DEBUG || vars.ACTIONS_STEP_DEBUG || false) }}'
           gemini_model: '${{ vars.GEMINI_MODEL }}'
