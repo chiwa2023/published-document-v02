@@ -76,7 +76,7 @@ jobs:
                 "maxSessionTurns": 25
               },
               "telemetry": {
-                "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
+                "enabled": false,
                 "target": "gcp"
               },
               "tools": {
