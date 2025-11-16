@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: 'Mint identity token'
         id: 'mint_identity_token'
-        if: |-\
+        if: |-
           ${{ vars.APP_ID }}
         uses: 'actions/create-github-app-token@a8d616148505b5069dccd32f177bb87d7f39123b' # ratchet:actions/create-github-app-token@v2
         with:
@@ -45,7 +45,7 @@ jobs:
           DESCRIPTION: '${{ github.event.pull_request.body || github.event.issue.body }}'
           EVENT_NAME: '${{ github.event_name }}'
           GITHUB_TOKEN: '${{ steps.mint_identity_token.outputs.token || secrets.GITHUB_TOKEN || github.token }}'
-          IS_PULL_REQUEST: '${{ !!github.event.pull_request }}\'
+          IS_PULL_REQUEST: '${{ !!github.event.pull_request }}'
           ISSUE_NUMBER: '${{ github.event.pull_request.number || github.event.issue.number }}'
           REPOSITORY: '${{ github.repository }}'
           ADDITIONAL_CONTEXT: '${{ inputs.additional_context }}'
@@ -215,7 +215,7 @@ jobs:
 
             ### D. Final Report
 
-            1. **Compose & Post Report**: After successfully completing all steps, use `mcp__github__add_issue_comment` to post a final summary.
+            1. **Compose & Post Report**: After successfully completing all steps, use `m-github__add_issue_comment` to post a final summary.
 
                 - **Report Template:**
 
