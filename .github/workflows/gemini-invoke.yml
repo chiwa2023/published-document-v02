@@ -25,14 +25,9 @@ jobs:
       issues: 'write'
       pull-requests: 'write'
     steps:
-      - name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v2'
-        with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
-
       - name: 'Mint identity token'
         id: 'mint_identity_token'
-        if: |-
+        if: |-\
           ${{ vars.APP_ID }}
         uses: 'actions/create-github-app-token@a8d616148505b5069dccd32f177bb87d7f39123b' # ratchet:actions/create-github-app-token@v2
         with:
@@ -50,12 +45,14 @@ jobs:
           DESCRIPTION: '${{ github.event.pull_request.body || github.event.issue.body }}'
           EVENT_NAME: '${{ github.event_name }}'
           GITHUB_TOKEN: '${{ steps.mint_identity_token.outputs.token || secrets.GITHUB_TOKEN || github.token }}'
-          IS_PULL_REQUEST: '${{ !!github.event.pull_request }}'
+          IS_PULL_REQUEST: '${{ !!github.event.pull_request }}\'
           ISSUE_NUMBER: '${{ github.event.pull_request.number || github.event.issue.number }}'
           REPOSITORY: '${{ github.repository }}'
           ADDITIONAL_CONTEXT: '${{ inputs.additional_context }}'
         with:
           gcp_project_id: '${{ vars.GOOGLE_CLOUD_PROJECT }}'
+          gcp_workload_identity_provider: 'projects/425794833566/locations/global/workloadIdentityPools/github-pool/providers/github-actions-provider'
+          gcp_service_account: 'PublishDocumentAccount@gemini-api-publish-document.iam.gserviceaccount.com'
           gemini_cli_version: '${{ vars.GEMINI_CLI_VERSION }}'
           gemini_debug: '${{ fromJSON(vars.DEBUG || vars.ACTIONS_STEP_DEBUG || false) }}'
           gemini_model: '${{ vars.GEMINI_MODEL }}'
