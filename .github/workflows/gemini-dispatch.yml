@@ -44,12 +44,23 @@ jobs:
 
   dispatch:
     # For PRs: only if not from a fork
-    # For comments: only if user types @gemini-cli and is OWNER/MEMBER/COLLABORATOR
     # For issues: only on open/reopen
+    # For comments: only if user types @gemini-cli and is OWNER/MEMBER/COLLABORATOR
+    if: |-
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork == false
+      ) || (
+        github.event_name == 'issues' &&
+        contains(fromJSON('["opened", "reopened"]'), github.event.action)
+      ) || (
+        github.event.sender.type == 'User' &&
+        startsWith(github.event.comment.body || github.event.review.body || github.event.issue.body, '@gemini-cli') &&
+        contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association || github.event.review.author_association || github.event.issue.author_association)
+      )
     runs-on: 'ubuntu-latest'
     permissions:
-      contents: 'write'
-      id-token: 'write'
+      contents: 'read'
       issues: 'write'
       pull-requests: 'write'
     outputs:
@@ -66,7 +77,7 @@ jobs:
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
-          permission-contents: 'write'
+          permission-contents: 'read'
           permission-issues: 'write'
           permission-pull-requests: 'write'
 
@@ -78,24 +89,24 @@ jobs:
           REQUEST: '${{ github.event.comment.body || github.event.review.body || github.event.issue.body }}'
         with:
           script: |
+            const eventType = process.env.EVENT_TYPE;
             const request = process.env.REQUEST;
-            const eventType = process.env.EVENT_TYPE
             core.setOutput('request', request);
 
-            if (request.startsWith("@gemini-cli /review")) {
+            if (eventType === 'pull_request.opened') {
+              core.setOutput('command', 'review');
+            } else if (['issues.opened', 'issues.reopened'].includes(eventType)) {
+              core.setOutput('command', 'triage');
+            } else if (request.startsWith("@gemini-cli /review")) {
               core.setOutput('command', 'review');
               const additionalContext = request.replace(/^@gemini-cli \/review/, '').trim();
               core.setOutput('additional_context', additionalContext);
             } else if (request.startsWith("@gemini-cli /triage")) {
               core.setOutput('command', 'triage');
             } else if (request.startsWith("@gemini-cli")) {
-              core.setOutput('command', 'invoke');
               const additionalContext = request.replace(/^@gemini-cli/, '').trim();
+              core.setOutput('command', 'invoke');
               core.setOutput('additional_context', additionalContext);
-            } else if (eventType === 'pull_request.opened') {
-              core.setOutput('command', 'review');
-            } else if (['issues.opened', 'issues.reopened'].includes(eventType)) {
-              core.setOutput('command', 'triage');
             } else {
               core.setOutput('command', 'fallthrough');
             }
@@ -111,6 +122,20 @@ jobs:
           gh issue comment "${ISSUE_NUMBER}" \
             --body "${MESSAGE}" \
             --repo "${REPOSITORY}"
+
+  review:
+    needs: 'dispatch'
+    if: |-
+      ${{ needs.dispatch.outputs.command == 'review' }}
+    uses: './.github/workflows/gemini-review.yml'
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      issues: 'write'
+      pull-requests: 'write'
+    with:
+      additional_context: '${{ needs.dispatch.outputs.additional_context }}'
+    secrets: 'inherit'
 
   triage:
     needs: 'dispatch'
@@ -131,20 +156,6 @@ jobs:
     if: |-
       ${{ needs.dispatch.outputs.command == 'invoke' }}
     uses: './.github/workflows/gemini-invoke.yml'
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-      issues: 'write'
-      pull-requests: 'write'
-    with:
-      additional_context: '${{ needs.dispatch.outputs.additional_context }}'
-    secrets: 'inherit'
-
-  review:
-    needs: 'dispatch'
-    if: |-
-      ${{ needs.dispatch.outputs.command == 'review' }}
-    uses: './.github/workflows/gemini-review.yml'
     permissions:
       contents: 'read'
       id-token: 'write'
