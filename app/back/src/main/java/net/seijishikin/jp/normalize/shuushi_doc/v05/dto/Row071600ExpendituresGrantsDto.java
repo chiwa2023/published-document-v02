@@ -6,9 +6,9 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 
 /**
- * 様式17その3 匿名パーティの収入の列項目Dto
+ * 様式7その16 交付金にかかる支出の列項目Dto
  */
-public class Row0900AnonymousPartyDto implements Serializable { // NOPMD DataClass
+public class Row071600ExpendituresGrantsDto implements Serializable { // NOPMD DataClass
 
     /** serialId */
     private static final long serialVersionUID = 1L;
@@ -17,9 +17,9 @@ public class Row0900AnonymousPartyDto implements Serializable { // NOPMD DataCla
     @JacksonXmlProperty(localName = "ICHIREN_NO")
     private Integer ichirenNo;
 
-    /** 場所 */
-    @JacksonXmlProperty(localName = "BASYO")
-    private String basho;
+    /** 支出項目 */
+    @JacksonXmlProperty(localName = "SHISYUTU_KMK")
+    private String shishutsuKoumoku;
 
     /** 金額 */
     @JacksonXmlProperty(localName = "KINGAKU")
@@ -29,9 +29,17 @@ public class Row0900AnonymousPartyDto implements Serializable { // NOPMD DataCla
     @JacksonXmlProperty(localName = "DT")
     private String accrualDate;
 
+    /** 本部支部への交付金支出の相手先名称 */
+    @JacksonXmlProperty(localName = "HONSIBU_NM")
+    private String honShibuName;
+
+    /** 支出の相手先住所 */
+    @JacksonXmlProperty(localName = "JIMU_ADR")
+    private String jusho;
+
     /** 備考 */
     @JacksonXmlProperty(localName = "BIKOU")
-    private String bikou;
+    private String biko;
 
     /**
      * 連番を取得する
@@ -74,35 +82,35 @@ public class Row0900AnonymousPartyDto implements Serializable { // NOPMD DataCla
      *
      * @return 備考
      */
-    public String getBikou() {
-        return bikou;
+    public String getBiko() {
+        return biko;
     }
 
     /**
      * 備考を設定する
      *
-     * @param bikou 備考
+     * @param biko 備考
      */
-    public void setBikou(final String bikou) {
-        this.bikou = bikou;
+    public void setBiko(final String biko) {
+        this.biko = biko;
     }
 
     /**
-     * 場所を取得する
+     * 支出項目を取得する
      *
-     * @return 場所
+     * @return 支出項目
      */
-    public String getBasho() {
-        return basho;
+    public String getShishutsuKoumoku() {
+        return shishutsuKoumoku;
     }
 
     /**
-     * 場所を設定する
+     * 支出項目を設定する
      *
-     * @param basho 場所
+     * @param shishutsuKoumoku 支出項目
      */
-    public void setBasho(final String basho) {
-        this.basho = basho;
+    public void setShishutsuKoumoku(final String shishutsuKoumoku) {
+        this.shishutsuKoumoku = shishutsuKoumoku;
     }
 
     /**
@@ -121,6 +129,42 @@ public class Row0900AnonymousPartyDto implements Serializable { // NOPMD DataCla
      */
     public void setAccrualDate(final String accrualDate) {
         this.accrualDate = accrualDate;
+    }
+
+    /**
+     * 本部支部名称を取得する
+     *
+     * @return 本部支部名称
+     */
+    public String getHonShibuName() {
+        return honShibuName;
+    }
+
+    /**
+     * 本部支部名称を設定する
+     *
+     * @param honShibuName 本部支部名称
+     */
+    public void setHonShibuName(final String honShibuName) {
+        this.honShibuName = honShibuName;
+    }
+
+    /**
+     * 住所を取得する
+     *
+     * @return 住所
+     */
+    public String getJusho() {
+        return jusho;
+    }
+
+    /**
+     * 住所を設定する
+     *
+     * @param jusho 住所
+     */
+    public void setJusho(final String jusho) {
+        this.jusho = jusho;
     }
 
 }

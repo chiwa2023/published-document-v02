@@ -1,0 +1,45 @@
+package net.seijishikin.jp.normalize.shuushi_doc.v05.dto;
+
+
+
+import static org.junit.Assert.assertEquals;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
+
+/**
+ * RowSozei411713sParliamentDto単体テスト
+ */
+class RowSozei411713sParliamentDtoTest {
+    // CHECKSTYLE:OFF MagicNumber
+
+    @Test
+    void testConvretXml() throws Exception {
+
+        RowSozei411713sParliamentDto row0 = new RowSozei411713sParliamentDto();
+
+        row0.setGiinName("国会議員姓名");
+
+        XmlMapper xmlMapper = new XmlMapper();
+        xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        Path pathAnswer = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "dto/publish/balancesheet/row_411713.txt");
+        String answer = Files.readString(pathAnswer);
+
+        // XML生成
+        String xml = xmlMapper.writeValueAsString(row0);
+
+        // Dto名がXMLルートに入っているがワークシートで利用するときに<ROW>で上書き
+
+        assertEquals(answer,xml);
+    }
+
+}

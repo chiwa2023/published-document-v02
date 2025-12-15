@@ -1,4 +1,4 @@
-<Row071900CurrentStatusOfRealEstateUseDto>
+<Row071900RealEstateUseDto>
   <ICHIREN_NO>1</ICHIREN_NO>
   <TEKIYOU>摘要</TEKIYOU>
   <YOUTO>用途</YOUTO>
@@ -6,4 +6,4 @@
   <SIYOU_YOUTO>使用の用途</SIYOU_YOUTO>
   <SIYOU_MENSEKI>123.45</SIYOU_MENSEKI>
   <SIYOU_KAKAKU>4444</SIYOU_KAKAKU>
-</Row071900CurrentStatusOfRealEstateUseDto>
+</Row071900RealEstateUseDto>
