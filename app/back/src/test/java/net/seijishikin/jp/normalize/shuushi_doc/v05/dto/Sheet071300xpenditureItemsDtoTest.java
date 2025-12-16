@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet071300ListOfExpenditureItemsDto単体テスト
+ * Sheet071300xpenditureItemsDto単体テスト
  */
-class Sheet071300ListOfExpenditureItemsDtoTest {
+class Sheet071300xpenditureItemsDtoTest {
     // CHECKSTYLE:OFF
 
     @Test
@@ -27,7 +27,7 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // 一種類のみ
-        Sheet071300ListOfExpenditureItemsDto sheet0 = new Sheet071300ListOfExpenditureItemsDto();
+        Sheet071300xpenditureItemsDto sheet0 = new Sheet071300xpenditureItemsDto();
         //  人件費項目の合計 */
         sheet0.setGoukeiJinkenhi("3000"); // NOPMD
         //  人件費の供与した交付金に係る支出 */

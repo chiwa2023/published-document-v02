@@ -15,7 +15,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet070500IncomeRelatedToGrantsDto単体テスト
+ * Sheet070500RelatedToGrantsDto単体テスト
  */
 class Sheet070500RelatedToGrantsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
@@ -27,7 +27,7 @@ class Sheet070500RelatedToGrantsDtoTest {
        xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // リスト0
-        Sheet070500IncomeRelatedToGrantsDto sheet0 = new Sheet070500IncomeRelatedToGrantsDto();
+        Sheet070500RelatedToGrantsDto sheet0 = new Sheet070500RelatedToGrantsDto();
         sheet0.setPageTotal(30000L);
         String xml0 = xmlMapper.writeValueAsString(sheet0);
 
@@ -42,7 +42,7 @@ class Sheet070500RelatedToGrantsDtoTest {
                 "dto/publish/balancesheet/sheet_070500_list.txt");
         String answer1 = Files.readString(pathAnswer1);
 
-        Sheet070500IncomeRelatedToGrantsDto sheet1 = new Sheet070500IncomeRelatedToGrantsDto();
+        Sheet070500RelatedToGrantsDto sheet1 = new Sheet070500RelatedToGrantsDto();
         sheet1.setPageTotal(30000L);
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要

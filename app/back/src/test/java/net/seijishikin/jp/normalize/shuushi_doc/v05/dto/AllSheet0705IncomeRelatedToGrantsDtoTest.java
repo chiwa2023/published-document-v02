@@ -24,7 +24,7 @@ class AllSheet0705IncomeRelatedToGrantsDtoTest {
         
         AllSheet0705IncomeRelatedToGrantsDto allSheet0705IncomeRelatedToGrantsDto = new AllSheet0705IncomeRelatedToGrantsDto();        
         
-        Sheet070500IncomeRelatedToGrantsDto sheet1 = new Sheet070500IncomeRelatedToGrantsDto();
+        Sheet070500RelatedToGrantsDto sheet1 = new Sheet070500RelatedToGrantsDto();
         sheet1.setPageTotal(30000L);
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要

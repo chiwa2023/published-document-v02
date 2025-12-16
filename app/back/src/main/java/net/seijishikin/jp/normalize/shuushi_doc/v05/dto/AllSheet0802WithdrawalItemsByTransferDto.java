@@ -20,14 +20,14 @@ public class AllSheet0802WithdrawalItemsByTransferDto implements Serializable {
     /** 振込明細書に係る支出項目リスト */
     @JacksonXmlProperty(localName = "SHEET")
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Sheet080200WithdrawalItemsByTransferDto> listSheet0802 = new ArrayList<>();
+    private List<Sheet080200WithdrawalItemsDto> listSheet0802 = new ArrayList<>();
 
     /**
      * 振込明細書に係る支出項目リストを取得する
      *
      * @return 振込明細書に係る支出項目リスト
      */
-    public List<Sheet080200WithdrawalItemsByTransferDto> getListSheet0802() {
+    public List<Sheet080200WithdrawalItemsDto> getListSheet0802() {
         return listSheet0802;
     }
 
@@ -36,7 +36,7 @@ public class AllSheet0802WithdrawalItemsByTransferDto implements Serializable {
      *
      * @param listSheet0802 振込明細書に係る支出項目リスト
      */
-    public void setListSheet0802(final List<Sheet080200WithdrawalItemsByTransferDto> listSheet0802) {
+    public void setListSheet0802(final List<Sheet080200WithdrawalItemsDto> listSheet0802) {
         this.listSheet0802 = listSheet0802;
     }
 

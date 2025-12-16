@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet071501OrganizationalActivityExpensesDto単体テスト
+ * Sheet071501OrganizationalActivityDto単体テスト
  */
-class Sheet071501OrganizationalActivityExpensesDtoTest {
+class Sheet071501OrganizationalActivityDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
@@ -27,7 +27,7 @@ class Sheet071501OrganizationalActivityExpensesDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // リスト0
-        Sheet071501OrganizationalActivityExpensesDto sheet0 = new Sheet071501OrganizationalActivityExpensesDto();
+        Sheet071501OrganizationalActivityDto sheet0 = new Sheet071501OrganizationalActivityDto();
         sheet0.setPageTotal(30000L);
         sheet0.setSonotaTotal("");
         sheet0.setHimoku("費目");
@@ -45,7 +45,7 @@ class Sheet071501OrganizationalActivityExpensesDtoTest {
                 "dto/publish/balancesheet/sheet_071501_list.txt");
         String answer1 = Files.readString(pathAnswer1);
 
-        Sheet071501OrganizationalActivityExpensesDto sheet1 = new Sheet071501OrganizationalActivityExpensesDto();
+        Sheet071501OrganizationalActivityDto sheet1 = new Sheet071501OrganizationalActivityDto();
         sheet1.setPageTotal(30000L);
         sheet1.setSonotaTotal("");
         sheet1.setHimoku("費目");

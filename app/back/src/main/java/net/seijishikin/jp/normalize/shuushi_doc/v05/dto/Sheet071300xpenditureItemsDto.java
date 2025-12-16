@@ -9,7 +9,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 様式17その13 支出項目別金額の内訳を表すワークシートDto
  */
 @JacksonXmlRootElement(localName = "SHEET")
-public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
+public class Sheet071300xpenditureItemsDto implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;

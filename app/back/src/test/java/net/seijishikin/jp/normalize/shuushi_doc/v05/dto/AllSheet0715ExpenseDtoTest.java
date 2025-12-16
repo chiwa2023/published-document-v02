@@ -29,7 +29,7 @@ class AllSheet0715ExpenseDtoTest {
          */
         AllSheetKbn071501Dto allSheetKbn071501Dto = new AllSheetKbn071501Dto();
 
-        Sheet071501OrganizationalActivityExpensesDto sheet1 = new Sheet071501OrganizationalActivityExpensesDto();
+        Sheet071501OrganizationalActivityDto sheet1 = new Sheet071501OrganizationalActivityDto();
         sheet1.setPageTotal(30000L);
         sheet1.setSonotaTotal("");
         sheet1.setHimoku("費目");
@@ -97,7 +97,7 @@ class AllSheet0715ExpenseDtoTest {
          */
         AllSheetKbn071503Dto allSheetKbn071503Dto = new AllSheetKbn071503Dto();
 
-        Sheet071503MagazinePublicationExpensesDto sheet3 = new Sheet071503MagazinePublicationExpensesDto();
+        Sheet071503MagazinePublicationDto sheet3 = new Sheet071503MagazinePublicationDto();
         sheet3.setPageTotal(30000L);
         sheet3.setSonotaTotal("");
         sheet3.setHimoku("費目");

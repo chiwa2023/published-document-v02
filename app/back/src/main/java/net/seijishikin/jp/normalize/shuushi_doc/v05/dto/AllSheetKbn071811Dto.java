@@ -14,14 +14,14 @@ public class AllSheetKbn071811Dto implements Serializable {
 
     /** 様式7の18の11 */
     @JacksonXmlProperty(localName = "SHEET")
-    private Sheet071811FacilityUsageRightsAmongAssetsDto sheet071811FacilityUsageRightsAmongAssetsDto;
+    private Sheet071811FacilityUsageRightsDto sheet071811FacilityUsageRightsAmongAssetsDto;
 
     /**
      * 様式7の18の11を取得する
      *
      * @return 様式7の18の11
      */
-    public Sheet071811FacilityUsageRightsAmongAssetsDto getSheet071811FacilityUsageRightsAmongAssetsDto() {
+    public Sheet071811FacilityUsageRightsDto getSheet071811FacilityUsageRightsAmongAssetsDto() {
         return sheet071811FacilityUsageRightsAmongAssetsDto;
     }
 
@@ -31,7 +31,7 @@ public class AllSheetKbn071811Dto implements Serializable {
      * @param sheet071811FacilityUsageRightsAmongAssetsDto 様式7の18の11
      */
     public void setSheet071811FacilityUsageRightsAmongAssetsDto(
-            final Sheet071811FacilityUsageRightsAmongAssetsDto sheet071811FacilityUsageRightsAmongAssetsDto) {
+            final Sheet071811FacilityUsageRightsDto sheet071811FacilityUsageRightsAmongAssetsDto) {
         this.sheet071811FacilityUsageRightsAmongAssetsDto = sheet071811FacilityUsageRightsAmongAssetsDto;
     }
 

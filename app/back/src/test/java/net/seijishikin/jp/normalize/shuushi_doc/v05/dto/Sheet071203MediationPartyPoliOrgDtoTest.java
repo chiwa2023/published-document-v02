@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet071503MagazinePublicationExpensesDto単体テスト
+ * Sheet071203MediationPartyPoliOrgDto単体テスト
  */
-class Sheet071503MagazinePublicationExpensesDtoTest {
+class Sheet071203MediationPartyPoliOrgDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
@@ -27,54 +27,59 @@ class Sheet071503MagazinePublicationExpensesDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // リスト0
-        Sheet071503MagazinePublicationExpensesDto sheet0 = new Sheet071503MagazinePublicationExpensesDto();
+        Sheet071201MediationPartyPersonalDto sheet0 = new Sheet071201MediationPartyPersonalDto();
         sheet0.setPageTotal(30000L);
-        sheet0.setSonotaTotal("");
-        sheet0.setHimoku("費目");
-        
+        sheet0.setPartyName("パーティ名称");
+        sheet0.setSortNo("9");
+
         String xml0 = xmlMapper.writeValueAsString(sheet0);
 
         Path pathAnswer0 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
-                "dto/publish/balancesheet/sheet_071503_none.txt");
+                "dto/publish/balancesheet/sheet_071203_none.txt");
         String answer0 = Files.readString(pathAnswer0);
+        
         assertEquals(answer0,xml0);
 
         // リスト存在
         Path pathAnswer1 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
-                "dto/publish/balancesheet/sheet_071503_list.txt");
+                "dto/publish/balancesheet/sheet_071203_list.txt");
         String answer1 = Files.readString(pathAnswer1);
 
-        Sheet071503MagazinePublicationExpensesDto sheet1 = new Sheet071503MagazinePublicationExpensesDto();
+        Sheet071201MediationPartyPersonalDto sheet1 = new Sheet071201MediationPartyPersonalDto();
         sheet1.setPageTotal(30000L);
-        sheet1.setSonotaTotal("");
-        sheet1.setHimoku("費目");
+        sheet1.setPartyName("パーティ名称");
+        sheet1.setSortNo("9");
 
-        Row071415OrdinaryExpensesDto row0 = new Row071415OrdinaryExpensesDto();
+        // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
+        Row070812MediationDto row0 = new Row070812MediationDto();
+
         //  連番 */
         row0.setIchirenNo(1);
-        //  支出の目的 */
-        row0.setMokuteki("目的");
+        //  名前 */
+        row0.setName("名称");
         //  金額 */
         row0.setKingaku(30000L);
         //  発生日 */
-        row0.setAccrualDate("R4/12/1");
-        //  支出の相手先名称 */
-        row0.setName("支出の相手先名称");
-        //  支出の相手先住所 */
-        row0.setJusho("東京都千代田区");
+        row0.setAccrualDate("R4/2/2");
+        //  斡旋の期間 */
+        row0.setPeriodMediate("1/1-1/31");
+        //  住所 */
+        row0.setJuusho("住所");
+        //  職業 */
+        row0.setShokugyou("職業");
         //  備考 */
         row0.setBikou("備考");
-        //  領収書を徴しがたかったフラグ */
-        row0.setFlgRyoushuusho(0);
-        //  交付金に係る支出フラグ */
-        row0.setFlgKouufukin(1);
+        //  通し番号 */
+        row0.setTohshibangou(1);
+        //  行区分 */
+        row0.setGyoukubun(Short.valueOf("7"));
 
         sheet1.getList().add(row0);
 
         String xml1 = xmlMapper.writeValueAsString(sheet1);
 
         assertEquals(answer1,xml1);
-        
+
     }
 
 }

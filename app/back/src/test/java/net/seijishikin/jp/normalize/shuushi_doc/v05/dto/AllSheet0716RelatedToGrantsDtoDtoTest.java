@@ -23,7 +23,7 @@ class AllSheet0716RelatedToGrantsDtoDtoTest {
     void testConvretXml() throws Exception { // NOPMD
         AllSheet0716RelatedToGrantsDtoDto allSheet0716RelatedToGrantsDtoDto = new AllSheet0716RelatedToGrantsDtoDto();
 
-        Sheet071600ExpendituresRelatedToGrantsDto sheet1 = new Sheet071600ExpendituresRelatedToGrantsDto();
+        Sheet071600RelatedToGrantsDto sheet1 = new Sheet071600RelatedToGrantsDto();
         sheet1.setPageTotal(30000L);
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要

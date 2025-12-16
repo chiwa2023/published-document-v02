@@ -11,7 +11,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 /**
  * 様式17その5 本部または支部から供与された交付金に係る収入を表すワークシートDto
  */
-public class Sheet070500IncomeRelatedToGrantsDto extends AbstractWorksheet implements Serializable {
+public class Sheet070500RelatedToGrantsDto extends AbstractWorksheet implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;

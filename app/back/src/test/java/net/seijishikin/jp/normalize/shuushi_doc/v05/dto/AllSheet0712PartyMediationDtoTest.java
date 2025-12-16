@@ -27,7 +27,7 @@ class AllSheet0712PartyMediationDtoTest {
         // その1
         AllSheetKbn071201Dto allSheetKbn071201Dto = new AllSheetKbn071201Dto();
 
-        Sheet071201ConsiderationMediationPartyPersonalDto sheet1 = new Sheet071201ConsiderationMediationPartyPersonalDto();
+        Sheet071201MediationPartyPersonalDto sheet1 = new Sheet071201MediationPartyPersonalDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
         sheet1.setSortNo("9");
@@ -63,7 +63,7 @@ class AllSheet0712PartyMediationDtoTest {
         // その2
         AllSheetKbn071202Dto allSheetKbn071202Dto = new AllSheetKbn071202Dto();
 
-        Sheet071202ConsiderationMediationPartyGroupDto sheet2 = new Sheet071202ConsiderationMediationPartyGroupDto();
+        Sheet071202MediationPartyGroupDto sheet2 = new Sheet071202MediationPartyGroupDto();
         sheet2.setPageTotal(30000L);
         sheet2.setPartyName("パーティ名称");
         sheet2.setSortNo("9");
@@ -99,7 +99,7 @@ class AllSheet0712PartyMediationDtoTest {
         // その3
         AllSheetKbn071203Dto allSheetKbn071203Dto = new AllSheetKbn071203Dto();
 
-        Sheet071203ConsiderationMediationPartyPoliticOrgDto sheet3 = new Sheet071203ConsiderationMediationPartyPoliticOrgDto();
+        Sheet071203MediationPartyPoliOrgDto sheet3 = new Sheet071203MediationPartyPoliOrgDto();
         sheet3.setPageTotal(30000L);
         sheet3.setPartyName("パーティ名称");
         sheet3.setSortNo("9");

@@ -24,7 +24,7 @@ class AllSheet0802WithdrawalItemsByTransferDtoTest {
 
         AllSheet0802WithdrawalItemsByTransferDto allSheet0802WithdrawalItemsByTransferDto = new AllSheet0802WithdrawalItemsByTransferDto();
 
-        Sheet080200WithdrawalItemsByTransferDto sheet1 = new Sheet080200WithdrawalItemsByTransferDto();
+        Sheet080200WithdrawalItemsDto sheet1 = new Sheet080200WithdrawalItemsDto();
 
         sheet1.setShishutsuKoumoku("支出項目");
         sheet1.setTekiyou("摘要");

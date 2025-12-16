@@ -16,14 +16,14 @@ public class AllSheet0705IncomeRelatedToGrantsDto implements Serializable {
 
     /** 様式7の5 */
     @JacksonXmlProperty(localName = "SHEET")
-    private Sheet070500IncomeRelatedToGrantsDto sheet070500IncomeRelatedToGrantsDto;
+    private Sheet070500RelatedToGrantsDto sheet070500IncomeRelatedToGrantsDto;
 
     /**
      * 様式7の5シートを取得する
      *
      * @return 様式7の5シート
      */
-    public Sheet070500IncomeRelatedToGrantsDto getSheet070500IncomeRelatedToGrantsDto() {
+    public Sheet070500RelatedToGrantsDto getSheet070500IncomeRelatedToGrantsDto() {
         return sheet070500IncomeRelatedToGrantsDto;
     }
 
@@ -33,7 +33,7 @@ public class AllSheet0705IncomeRelatedToGrantsDto implements Serializable {
      * @param sheet070500IncomeRelatedToGrantsDto 様式7の5シート
      */
     public void setSheet070500IncomeRelatedToGrantsDto(
-            final Sheet070500IncomeRelatedToGrantsDto sheet070500IncomeRelatedToGrantsDto) {
+            final Sheet070500RelatedToGrantsDto sheet070500IncomeRelatedToGrantsDto) {
         this.sheet070500IncomeRelatedToGrantsDto = sheet070500IncomeRelatedToGrantsDto;
     }
 

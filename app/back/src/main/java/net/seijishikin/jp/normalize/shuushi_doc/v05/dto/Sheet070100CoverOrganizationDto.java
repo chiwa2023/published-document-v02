@@ -10,7 +10,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 様式17その1 政治資金収支報告書の表紙を表すワークシートDto
  */
 @JacksonXmlRootElement(localName = "SHEET")
-public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable {
+public class Sheet070100CoverOrganizationDto implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;

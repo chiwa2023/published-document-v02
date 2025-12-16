@@ -18,14 +18,14 @@ public class AllSheetKbn071501Dto implements Serializable {
     /** 様式7の15の1 */
     @JacksonXmlProperty(localName = "SHEET")
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Sheet071501OrganizationalActivityExpensesDto> list = new ArrayList<>();
+    private List<Sheet071501OrganizationalActivityDto> list = new ArrayList<>();
 
     /**
      * 様式7の15の1シートリストを取得する
      *
      * @return 様式7の15の1シートリスト
      */
-    public List<Sheet071501OrganizationalActivityExpensesDto> getList() {
+    public List<Sheet071501OrganizationalActivityDto> getList() {
         return list;
     }
 
@@ -34,7 +34,7 @@ public class AllSheetKbn071501Dto implements Serializable {
      *
      * @param list 様式7の15の1シートリスト
      */
-    public void setList(final List<Sheet071501OrganizationalActivityExpensesDto> list) {
+    public void setList(final List<Sheet071501OrganizationalActivityDto> list) {
         this.list = list;
     }
 

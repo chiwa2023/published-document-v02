@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet071811FacilityUsageRightsAmongAssetsDto単体テスト
+ * Sheet071811FacilityUsageRightsDto単体テスト
  */
-class Sheet071811FacilityUsageRightsAmongAssetsDtoTest {
+class Sheet071811FacilityUsageRightsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
@@ -27,7 +27,7 @@ class Sheet071811FacilityUsageRightsAmongAssetsDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // リスト0
-        Sheet071811FacilityUsageRightsAmongAssetsDto sheet0 = new Sheet071811FacilityUsageRightsAmongAssetsDto();
+        Sheet071811FacilityUsageRightsDto sheet0 = new Sheet071811FacilityUsageRightsDto();
         String xml0 = xmlMapper.writeValueAsString(sheet0);
 
         Path pathAnswer0 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
@@ -41,7 +41,7 @@ class Sheet071811FacilityUsageRightsAmongAssetsDtoTest {
                 "dto/publish/balancesheet/sheet_071811_list.txt");
         String answer1 = Files.readString(pathAnswer1);
 
-        Sheet071811FacilityUsageRightsAmongAssetsDto sheet1 = new Sheet071811FacilityUsageRightsAmongAssetsDto();
+        Sheet071811FacilityUsageRightsDto sheet1 = new Sheet071811FacilityUsageRightsDto();
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row071800ClassificationAssetsDto row0 = new Row071800ClassificationAssetsDto();

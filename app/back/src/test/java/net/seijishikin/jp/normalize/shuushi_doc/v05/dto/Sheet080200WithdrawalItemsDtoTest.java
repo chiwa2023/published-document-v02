@@ -15,15 +15,15 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet080200WithdrawalItemsByTransferDto単体テスト
+ * Sheet080200WithdrawalItemsDto単体テスト
  */
-class Sheet080200WithdrawalItemsByTransferDtoTest {
+class Sheet080200WithdrawalItemsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
     void testConvretXml() throws Exception {
 
-        Sheet080200WithdrawalItemsByTransferDto sheet1 = new Sheet080200WithdrawalItemsByTransferDto();
+        Sheet080200WithdrawalItemsDto sheet1 = new Sheet080200WithdrawalItemsDto();
 
         sheet1.setShishutsuKoumoku("支出項目");
         sheet1.setTekiyou("摘要");

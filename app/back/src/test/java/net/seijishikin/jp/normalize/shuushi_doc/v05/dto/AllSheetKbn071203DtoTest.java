@@ -25,7 +25,7 @@ class AllSheetKbn071203DtoTest {
 
         AllSheetKbn071203Dto allSheetKbn071203Dto = new AllSheetKbn071203Dto();
 
-        Sheet071203ConsiderationMediationPartyPoliticOrgDto sheet1 = new Sheet071203ConsiderationMediationPartyPoliticOrgDto();
+        Sheet071203MediationPartyPoliOrgDto sheet1 = new Sheet071203MediationPartyPoliOrgDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
         sheet1.setSortNo("9");

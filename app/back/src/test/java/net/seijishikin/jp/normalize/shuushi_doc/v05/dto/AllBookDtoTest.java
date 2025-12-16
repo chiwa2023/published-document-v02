@@ -45,7 +45,7 @@ class AllBookDtoTest {
 
         // sheet0701表紙
         AllSheet0701CoverAndOrganizationDetailsDto allSheet0701CoverAndOrganizationDetailsDto = new AllSheet0701CoverAndOrganizationDetailsDto();
-        Sheet070100CoverAndOrganizationDetailsDto sheet070100 = new Sheet070100CoverAndOrganizationDetailsDto();
+        Sheet070100CoverOrganizationDto sheet070100 = new Sheet070100CoverOrganizationDto();
         sheet070100.setHoukokuNen(2021);
         sheet070100.setDateKaisai("");
         sheet070100.setDantaiName01("サンプル政治団体");
@@ -101,7 +101,7 @@ class AllBookDtoTest {
          */
         AllSheet0702SummaryTableIncomeDto allSheet0702SummaryTableIncomeDto = new AllSheet0702SummaryTableIncomeDto();
 
-        Sheet070200SummaryTableIncomeExpenditureDto sheet02 = new Sheet070200SummaryTableIncomeExpenditureDto();
+        Sheet070200SummaryIncomeDto sheet02 = new Sheet070200SummaryIncomeDto();
         sheet02.setShunyuGokei(0L);
         sheet02.setZennenKurikoshi(0L);
         sheet02.setHonnenShunyu(0L);
@@ -149,7 +149,7 @@ class AllBookDtoTest {
          */
         AllSheet0705IncomeRelatedToGrantsDto allSheet0705IncomeRelatedToGrantsDto = new AllSheet0705IncomeRelatedToGrantsDto();
         allSheet0705IncomeRelatedToGrantsDto
-                .setSheet070500IncomeRelatedToGrantsDto(new Sheet070500IncomeRelatedToGrantsDto());
+                .setSheet070500IncomeRelatedToGrantsDto(new Sheet070500RelatedToGrantsDto());
         allBookDto.setAllSheet0705IncomeRelatedToGrantsDto(allSheet0705IncomeRelatedToGrantsDto);
 
         /**
@@ -279,17 +279,17 @@ class AllBookDtoTest {
          */
         AllSheet0712PartyMediationDto allSheet0712PartyMediationDto = new AllSheet0712PartyMediationDto();
 
-        Sheet071201ConsiderationMediationPartyPersonalDto sheet071201ConsiderationMediationPartyPersonalDto = new Sheet071201ConsiderationMediationPartyPersonalDto();
+        Sheet071201MediationPartyPersonalDto sheet071201ConsiderationMediationPartyPersonalDto = new Sheet071201MediationPartyPersonalDto();
         sheet071201ConsiderationMediationPartyPersonalDto.setPartyName("");
         sheet071201ConsiderationMediationPartyPersonalDto.setSortNo("");
         sheet071201ConsiderationMediationPartyPersonalDto.setPageTotal(0L);
 
-        Sheet071202ConsiderationMediationPartyGroupDto sheet071202ConsiderationMediationPartyGroupDto = new Sheet071202ConsiderationMediationPartyGroupDto();
+        Sheet071202MediationPartyGroupDto sheet071202ConsiderationMediationPartyGroupDto = new Sheet071202MediationPartyGroupDto();
         sheet071202ConsiderationMediationPartyGroupDto.setPartyName("");
         sheet071202ConsiderationMediationPartyGroupDto.setSortNo("");
         sheet071202ConsiderationMediationPartyGroupDto.setPageTotal(0L);
 
-        Sheet071203ConsiderationMediationPartyPoliticOrgDto sheet071203ConsiderationMediationPartyPoliticOrgDto = new Sheet071203ConsiderationMediationPartyPoliticOrgDto();
+        Sheet071203MediationPartyPoliOrgDto sheet071203ConsiderationMediationPartyPoliticOrgDto = new Sheet071203MediationPartyPoliOrgDto();
         sheet071203ConsiderationMediationPartyPoliticOrgDto.setPartyName("");
         sheet071203ConsiderationMediationPartyPoliticOrgDto.setSortNo("");
         sheet071203ConsiderationMediationPartyPoliticOrgDto.setPageTotal(0L);
@@ -314,7 +314,7 @@ class AllBookDtoTest {
          */
         AllSheet0713ListOfExpenditureItemsDto allSheet0713ListOfExpenditureItemsDto = new AllSheet0713ListOfExpenditureItemsDto();
 
-        Sheet071300ListOfExpenditureItemsDto sheet13 = new Sheet071300ListOfExpenditureItemsDto();
+        Sheet071300xpenditureItemsDto sheet13 = new Sheet071300xpenditureItemsDto();
         sheet13.setGoukeiJinkenhi("");
         sheet13.setKohfuJinkenhi("");
         sheet13.setBikouJinkenhi("");
@@ -406,7 +406,7 @@ class AllBookDtoTest {
          */
         AllSheet0715ExpenseDto allSheet0715ExpenseDto = new AllSheet0715ExpenseDto();
 
-        Sheet071501OrganizationalActivityExpensesDto sheet071501OrganizationalActivityExpensesDto = new Sheet071501OrganizationalActivityExpensesDto();
+        Sheet071501OrganizationalActivityDto sheet071501OrganizationalActivityExpensesDto = new Sheet071501OrganizationalActivityDto();
         sheet071501OrganizationalActivityExpensesDto.setSonotaTotal("");
         sheet071501OrganizationalActivityExpensesDto.setHimoku("");
         sheet071501OrganizationalActivityExpensesDto.setPageTotal(0L);
@@ -416,7 +416,7 @@ class AllBookDtoTest {
         sheet071502ElectionRelatedExpensesDto.setHimoku("");
         sheet071502ElectionRelatedExpensesDto.setPageTotal(0L);
 
-        Sheet071503MagazinePublicationExpensesDto sheet071503MagazinePublicationExpensesDto = new Sheet071503MagazinePublicationExpensesDto();
+        Sheet071503MagazinePublicationDto sheet071503MagazinePublicationExpensesDto = new Sheet071503MagazinePublicationDto();
         sheet071503MagazinePublicationExpensesDto.setSonotaTotal("");
         sheet071503MagazinePublicationExpensesDto.setHimoku("");
         sheet071503MagazinePublicationExpensesDto.setPageTotal(0L);
@@ -495,7 +495,7 @@ class AllBookDtoTest {
          */
         AllSheet0716RelatedToGrantsDtoDto allSheet0716RelatedToGrantsDtoDto = new AllSheet0716RelatedToGrantsDtoDto();
         allSheet0716RelatedToGrantsDtoDto
-                .setSheet071600ExpendituresRelatedToGrantsDto(new Sheet071600ExpendituresRelatedToGrantsDto());
+                .setSheet071600ExpendituresRelatedToGrantsDto(new Sheet071600RelatedToGrantsDto());
         allBookDto.setAllSheet0716RelatedToGrantsDtoDto(allSheet0716RelatedToGrantsDtoDto);
 
         /**
@@ -548,7 +548,7 @@ class AllBookDtoTest {
         Sheet071808InvestmentAmongAssetsDto sheet071808InvestmentAmongAssetsDto = new Sheet071808InvestmentAmongAssetsDto();
         Sheet071809LoanAmongAssetsDto sheet071809LoanAmongAssetsDto = new Sheet071809LoanAmongAssetsDto();
         Sheet071810DepositAmongAssetsDto sheet071810DepositAmongAssetsDto = new Sheet071810DepositAmongAssetsDto();
-        Sheet071811FacilityUsageRightsAmongAssetsDto sheet071811FacilityUsageRightsAmongAssetsDto = new Sheet071811FacilityUsageRightsAmongAssetsDto();
+        Sheet071811FacilityUsageRightsDto sheet071811FacilityUsageRightsAmongAssetsDto = new Sheet071811FacilityUsageRightsDto();
         Sheet071812BorrowingsAmongAssetsDto sheet071812BorrowingsAmongAssetsDto = new Sheet071812BorrowingsAmongAssetsDto();
 
         AllSheetKbn071801Dto allSheetKbn071801Dto = new AllSheetKbn071801Dto();

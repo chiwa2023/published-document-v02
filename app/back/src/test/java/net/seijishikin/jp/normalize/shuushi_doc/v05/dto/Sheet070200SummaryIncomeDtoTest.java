@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet070200SummaryTableIncomeExpenditureDto単体テスト
+ * Sheet070200SummaryIncomeDto単体テスト
  */
-class Sheet070200SummaryTableIncomeExpenditureDtoTest {
+class Sheet070200SummaryIncomeDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
@@ -27,7 +27,7 @@ class Sheet070200SummaryTableIncomeExpenditureDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // 一種類のみ
-        Sheet070200SummaryTableIncomeExpenditureDto sheet0 = new Sheet070200SummaryTableIncomeExpenditureDto();
+        Sheet070200SummaryIncomeDto sheet0 = new Sheet070200SummaryIncomeDto();
         //  収入総額 */
         sheet0.setShunyuGokei(30000L);
         //  前年からの繰越額 */

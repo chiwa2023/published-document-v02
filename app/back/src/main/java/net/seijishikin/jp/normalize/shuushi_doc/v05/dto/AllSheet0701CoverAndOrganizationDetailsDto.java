@@ -16,14 +16,14 @@ public class AllSheet0701CoverAndOrganizationDetailsDto implements Serializable 
 
     /** 様式7の1 */
     @JacksonXmlProperty(localName = "SHEET")
-    private Sheet070100CoverAndOrganizationDetailsDto sheet070100CoverAndOrganizationDetailsDto;
+    private Sheet070100CoverOrganizationDto sheet070100CoverAndOrganizationDetailsDto;
 
     /**
      * 様式7の1のシートを取得する
      *
      * @return 様式7の1のシート
      */
-    public Sheet070100CoverAndOrganizationDetailsDto getSheet070100CoverAndOrganizationDetailsDto() {
+    public Sheet070100CoverOrganizationDto getSheet070100CoverAndOrganizationDetailsDto() {
         return sheet070100CoverAndOrganizationDetailsDto;
     }
 
@@ -33,7 +33,7 @@ public class AllSheet0701CoverAndOrganizationDetailsDto implements Serializable 
      * @param sheet070100CoverAndOrganizationDetailsDto 様式7の1のシート
      */
     public void setSheet070100CoverAndOrganizationDetailsDto(
-            final Sheet070100CoverAndOrganizationDetailsDto sheet070100CoverAndOrganizationDetailsDto) {
+            final Sheet070100CoverOrganizationDto sheet070100CoverAndOrganizationDetailsDto) {
         this.sheet070100CoverAndOrganizationDetailsDto = sheet070100CoverAndOrganizationDetailsDto;
     }
 

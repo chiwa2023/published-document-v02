@@ -18,14 +18,14 @@ public class AllSheetKbn071203Dto implements Serializable {
     /** 様式7の12の3リスト */
     @JacksonXmlProperty(localName = "SHEET")
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Sheet071203ConsiderationMediationPartyPoliticOrgDto> list = new ArrayList<>();
+    private List<Sheet071203MediationPartyPoliOrgDto> list = new ArrayList<>();
 
     /**
      * 様式7の12の3リストを取得する
      *
      * @return 様式7の12の3リスト
      */
-    public List<Sheet071203ConsiderationMediationPartyPoliticOrgDto> getList() {
+    public List<Sheet071203MediationPartyPoliOrgDto> getList() {
         return list;
     }
 
@@ -34,7 +34,7 @@ public class AllSheetKbn071203Dto implements Serializable {
      *
      * @param list 様式7の12の3リスト
      */
-    public void setList(final List<Sheet071203ConsiderationMediationPartyPoliticOrgDto> list) {
+    public void setList(final List<Sheet071203MediationPartyPoliOrgDto> list) {
         this.list = list;
     }
 

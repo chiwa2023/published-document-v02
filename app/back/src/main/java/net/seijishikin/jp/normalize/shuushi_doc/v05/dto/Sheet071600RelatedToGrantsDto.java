@@ -10,7 +10,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 /**
  * 様式17その16 交付金に係る支出を表すワークシートDto
  */
-public class Sheet071600ExpendituresRelatedToGrantsDto extends AbstractWorksheet implements Serializable {
+public class Sheet071600RelatedToGrantsDto extends AbstractWorksheet implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;

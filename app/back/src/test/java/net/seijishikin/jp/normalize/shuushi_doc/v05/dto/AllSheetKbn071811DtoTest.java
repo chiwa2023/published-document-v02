@@ -25,7 +25,7 @@ class AllSheetKbn071811DtoTest {
 
         AllSheetKbn071811Dto allSheetKbn071811Dto = new AllSheetKbn071811Dto();
 
-        Sheet071811FacilityUsageRightsAmongAssetsDto sheet1 = new Sheet071811FacilityUsageRightsAmongAssetsDto();
+        Sheet071811FacilityUsageRightsDto sheet1 = new Sheet071811FacilityUsageRightsDto();
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row071800ClassificationAssetsDto row0 = new Row071800ClassificationAssetsDto();

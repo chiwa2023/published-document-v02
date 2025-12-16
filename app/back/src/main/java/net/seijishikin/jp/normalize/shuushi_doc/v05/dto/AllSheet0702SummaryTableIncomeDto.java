@@ -16,14 +16,14 @@ public class AllSheet0702SummaryTableIncomeDto implements Serializable {
 
     /** 様式7の2の1 */
     @JacksonXmlProperty(localName = "SHEET")
-    private Sheet070200SummaryTableIncomeExpenditureDto sheet070200SummaryTableIncomeExpenditureDto;
+    private Sheet070200SummaryIncomeDto sheet070200SummaryTableIncomeExpenditureDto;
 
     /**
      * 様式7の2収入一覧表データを取得する
      *
      * @return 様式7の2収入一覧表データ
      */
-    public Sheet070200SummaryTableIncomeExpenditureDto getSheet070200SummaryTableIncomeExpenditureDto() {
+    public Sheet070200SummaryIncomeDto getSheet070200SummaryTableIncomeExpenditureDto() {
         return sheet070200SummaryTableIncomeExpenditureDto;
     }
 
@@ -33,7 +33,7 @@ public class AllSheet0702SummaryTableIncomeDto implements Serializable {
      * @param sheet070200SummaryTableIncomeExpenditureDto 様式7の2収入一覧表データ
      */
     public void setSheet070200SummaryTableIncomeExpenditureDto(
-            final Sheet070200SummaryTableIncomeExpenditureDto sheet070200SummaryTableIncomeExpenditureDto) {
+            final Sheet070200SummaryIncomeDto sheet070200SummaryTableIncomeExpenditureDto) {
         this.sheet070200SummaryTableIncomeExpenditureDto = sheet070200SummaryTableIncomeExpenditureDto;
     }
 

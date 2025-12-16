@@ -1,5 +1,6 @@
 package net.seijishikin.jp.normalize.shuushi_doc.v05.dto;
 
+
 import static org.junit.Assert.assertEquals;
 
 import java.nio.file.Files;
@@ -14,64 +15,52 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet071202ConsiderationMediationPartyGroupDto単体テスト
+ * Sheet071600RelatedToGrantsDto単体テスト
  */
-class Sheet071202ConsiderationMediationPartyGroupDtoTest {
+class Sheet071600RelatedToGrantsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
-    void testConvretXml() throws Exception {
+    void testConvretXml() throws Exception { // NOPMD ExcessiveMethodLength
 
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // リスト0
-        Sheet071202ConsiderationMediationPartyGroupDto sheet0 = new Sheet071202ConsiderationMediationPartyGroupDto();
+        Sheet071600RelatedToGrantsDto sheet0 = new Sheet071600RelatedToGrantsDto();
         sheet0.setPageTotal(30000L);
-        sheet0.setPartyName("パーティ名称");
-        sheet0.setSortNo("9");
-
+        
         String xml0 = xmlMapper.writeValueAsString(sheet0);
 
         Path pathAnswer0 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
-                "dto/publish/balancesheet/sheet_071202_none.txt");
+                "dto/publish/balancesheet/sheet_071600_none.txt");
         String answer0 = Files.readString(pathAnswer0);
-
         assertEquals(answer0,xml0);
 
         // リスト存在
         Path pathAnswer1 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
-                "dto/publish/balancesheet/sheet_071202_list.txt");
+                "dto/publish/balancesheet/sheet_071600_list.txt");
         String answer1 = Files.readString(pathAnswer1);
 
-        Sheet071202ConsiderationMediationPartyGroupDto sheet1 = new Sheet071202ConsiderationMediationPartyGroupDto();
+        Sheet071600RelatedToGrantsDto sheet1 = new Sheet071600RelatedToGrantsDto();
         sheet1.setPageTotal(30000L);
-        sheet1.setPartyName("パーティ名称");
-        sheet1.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
-        Row070812MediationDto row0 = new Row070812MediationDto();
-
+        Row071600ExpendituresGrantsDto row0 = new Row071600ExpendituresGrantsDto();
         //  連番 */
         row0.setIchirenNo(1);
-        //  名前 */
-        row0.setName("名称");
+        //  支出項目 */
+        row0.setShishutsuKoumoku("支出の目的");
         //  金額 */
         row0.setKingaku(30000L);
         //  発生日 */
-        row0.setAccrualDate("R4/2/2");
-        //  斡旋の期間 */
-        row0.setPeriodMediate("1/1-1/31");
-        //  住所 */
-        row0.setJuusho("住所");
-        //  職業 */
-        row0.setShokugyou("職業");
+        row0.setAccrualDate("R4/12/1");
+        //  本部支部への交付金支出の相手先名称 */
+        row0.setHonShibuName("本部支部名称");
+        //  支出の相手先住所 */
+        row0.setJusho("東京都千代田区");
         //  備考 */
-        row0.setBikou("備考");
-        //  通し番号 */
-        row0.setTohshibangou(1);
-        //  行区分 */
-        row0.setGyoukubun(Short.valueOf("7"));
+        row0.setBiko("備考");
 
         sheet1.getList().add(row0);
 

@@ -25,7 +25,7 @@ class AllSheetKbn071503DtoTest {
 
         AllSheetKbn071503Dto allSheetKbn071503Dto = new AllSheetKbn071503Dto();
 
-        Sheet071503MagazinePublicationExpensesDto sheet1 = new Sheet071503MagazinePublicationExpensesDto();
+        Sheet071503MagazinePublicationDto sheet1 = new Sheet071503MagazinePublicationDto();
         sheet1.setPageTotal(30000L);
         sheet1.setSonotaTotal("");
         sheet1.setHimoku("費目");

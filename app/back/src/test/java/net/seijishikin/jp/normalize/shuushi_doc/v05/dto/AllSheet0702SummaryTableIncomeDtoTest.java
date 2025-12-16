@@ -25,7 +25,7 @@ class AllSheet0702SummaryTableIncomeDtoTest {
         AllSheet0702SummaryTableIncomeDto allSheet0702SummaryTableIncomeDto = new AllSheet0702SummaryTableIncomeDto();
         
         // 一種類のみ
-        Sheet070200SummaryTableIncomeExpenditureDto sheet0 = new Sheet070200SummaryTableIncomeExpenditureDto();
+        Sheet070200SummaryIncomeDto sheet0 = new Sheet070200SummaryIncomeDto();
         //  収入総額 */
         sheet0.setShunyuGokei(30000L);
         //  前年からの繰越額 */

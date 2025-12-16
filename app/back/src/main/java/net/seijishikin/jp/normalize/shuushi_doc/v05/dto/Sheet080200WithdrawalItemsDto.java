@@ -10,7 +10,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 様式08その2 支出項目別金額の内訳を表すワークシートDto
  */
 @JacksonXmlRootElement(localName = "SHEET")
-public class Sheet080200WithdrawalItemsByTransferDto implements Serializable { // NOPMD DataClass
+public class Sheet080200WithdrawalItemsDto implements Serializable { // NOPMD DataClass
 
     /** serialId */
     private static final long serialVersionUID = 1L;

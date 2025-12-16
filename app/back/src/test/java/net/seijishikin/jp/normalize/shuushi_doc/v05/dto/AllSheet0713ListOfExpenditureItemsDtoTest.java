@@ -25,7 +25,7 @@ class AllSheet0713ListOfExpenditureItemsDtoTest {
         AllSheet0713ListOfExpenditureItemsDto allSheet0713ListOfExpenditureItemsDto = new AllSheet0713ListOfExpenditureItemsDto();
 
         // 一種類のみ
-        Sheet071300ListOfExpenditureItemsDto sheet0 = new Sheet071300ListOfExpenditureItemsDto();
+        Sheet071300xpenditureItemsDto sheet0 = new Sheet071300xpenditureItemsDto();
         //  人件費項目の合計 */
         sheet0.setGoukeiJinkenhi("3000"); // NOPMD
         //  人件費の供与した交付金に係る支出 */

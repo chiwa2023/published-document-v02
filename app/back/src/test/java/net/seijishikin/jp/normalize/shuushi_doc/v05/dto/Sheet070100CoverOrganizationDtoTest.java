@@ -15,9 +15,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 
 /**
- * Sheet070100CoverAndOrganizationDetailsDto単体テスト
+ * Sheet070100CoverOrganizationDto単体テスト
  */
-class Sheet070100CoverAndOrganizationDetailsDtoTest {
+class Sheet070100CoverOrganizationDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
@@ -27,7 +27,7 @@ class Sheet070100CoverAndOrganizationDetailsDtoTest {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         // 一種類のみ
-        Sheet070100CoverAndOrganizationDetailsDto sheet0 = new Sheet070100CoverAndOrganizationDetailsDto();
+        Sheet070100CoverOrganizationDto sheet0 = new Sheet070100CoverOrganizationDto();
         ///** 報告年 */
         sheet0.setHoukokuNen(2022);
         ///** 開催年月日 */

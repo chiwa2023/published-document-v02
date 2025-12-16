@@ -10,7 +10,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 様式17その2 収支の総括表を表すワークシートDto
  */
 @JacksonXmlRootElement(localName = "SHEET")
-public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable { // NOPMD DataClass
+public class Sheet070200SummaryIncomeDto implements Serializable { // NOPMD DataClass
 
     /** serialId */
     private static final long serialVersionUID = 1L;

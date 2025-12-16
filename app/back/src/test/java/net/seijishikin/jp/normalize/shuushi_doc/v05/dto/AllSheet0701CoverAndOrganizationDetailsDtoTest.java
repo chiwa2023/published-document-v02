@@ -25,7 +25,7 @@ class AllSheet0701CoverAndOrganizationDetailsDtoTest {
         AllSheet0701CoverAndOrganizationDetailsDto allSheet0701CoverAndOrganizationDetailsDto = new AllSheet0701CoverAndOrganizationDetailsDto();
 
         // 一種類のみ
-        Sheet070100CoverAndOrganizationDetailsDto sheet0 = new Sheet070100CoverAndOrganizationDetailsDto();
+        Sheet070100CoverOrganizationDto sheet0 = new Sheet070100CoverOrganizationDto();
         //  報告年 */
         sheet0.setHoukokuNen(2022);
         //  開催年月日 */

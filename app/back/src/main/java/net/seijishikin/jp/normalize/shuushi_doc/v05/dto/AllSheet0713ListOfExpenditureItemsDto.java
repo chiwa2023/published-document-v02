@@ -16,14 +16,14 @@ public class AllSheet0713ListOfExpenditureItemsDto implements Serializable {
 
     /** 様式7の13 */
     @JacksonXmlProperty(localName = "SHEET")
-    private Sheet071300ListOfExpenditureItemsDto sheet071300ListOfExpenditureItemsDto;
+    private Sheet071300xpenditureItemsDto sheet071300ListOfExpenditureItemsDto;
 
     /**
      * 様式7の13データを取得する
      *
      * @return 様式7の13データを設定
      */
-    public Sheet071300ListOfExpenditureItemsDto getSheet071300ListOfExpenditureItemsDto() {
+    public Sheet071300xpenditureItemsDto getSheet071300ListOfExpenditureItemsDto() {
         return sheet071300ListOfExpenditureItemsDto;
     }
 
@@ -33,7 +33,7 @@ public class AllSheet0713ListOfExpenditureItemsDto implements Serializable {
      * @param sheet071300ListOfExpenditureItemsDto 様式7の13データを設定
      */
     public void setSheet071300ListOfExpenditureItemsDto(
-            final Sheet071300ListOfExpenditureItemsDto sheet071300ListOfExpenditureItemsDto) {
+            final Sheet071300xpenditureItemsDto sheet071300ListOfExpenditureItemsDto) {
         this.sheet071300ListOfExpenditureItemsDto = sheet071300ListOfExpenditureItemsDto;
     }
 
