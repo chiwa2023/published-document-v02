@@ -76,6 +76,7 @@
 | `allSheetKbn070701Dto`  | `KUBUN1`  | `AllSheetKbn070701Dto`    | 様式7の7の1  | 未調査／未実装 |
 | `allSheetKbn070702Dto`  | `KUBUN2`  | `AllSheetKbn070702Dto`    | 様式7の7の2  | 未調査／未実装 |
 | `allSheetKbn070703Dto`  | `KUBUN3`  | `AllSheetKbn070703Dto`    | 様式7の7の3  | 未調査／未実装 |
+
 ## 子要素の詳細
 
 - [AllSheetKbn070701Dto](./AllSheetKbn070701Dto.md)
