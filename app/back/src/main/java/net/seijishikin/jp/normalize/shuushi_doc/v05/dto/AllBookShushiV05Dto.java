@@ -9,7 +9,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 全「Book」XMLを表現するDto 互換性のためには…Excelじゃないけど「Book」root必要(笑)
  */
 @JacksonXmlRootElement(localName = "BOOK")
-public class AllBookDto implements Serializable {
+public class AllBookShushiV05Dto implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;

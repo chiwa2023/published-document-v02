@@ -19,13 +19,13 @@ import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 /**
  * AllBookDto単体テスト
  */
-class AllBookDtoTest {
+class AllBookShushiV05DtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
     @Test
     void testConvretXmlLeast() throws Exception { // NOPMD
 
-        AllBookDto allBookDto = new AllBookDto();
+        AllBookShushiV05Dto allBookDto = new AllBookShushiV05Dto();
 
         // ヘッダ
         AllBookHeaderDto allBookHeaderDto = new AllBookHeaderDto();

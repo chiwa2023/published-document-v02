@@ -18,7 +18,7 @@ import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
 /**
  * AllShitoBook単体テスト
  */
-class AllBookShitoV05Test {
+class AllBookShitoV05DtoTest {
     // CHECKSTYLE:OFF
 
     @Test
@@ -32,7 +32,7 @@ class AllBookShitoV05Test {
                 "dto/publish/party_usage/SITO_LEAST.xml");
         String readText = Files.readString(pathAnswer, Charset.forName("windows-31j"));
 
-        AllBookShitoV05 allShitoBook = xmlMapper.readValue(readText, new TypeReference<>() {
+        AllBookShitoV05Dto allShitoBook = xmlMapper.readValue(readText, new TypeReference<>() {
         });
 
         // <HEAD>
@@ -154,7 +154,7 @@ class AllBookShitoV05Test {
         Path pathRead = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "dto/publish/party_usage/SITO.xml");
         String readText = Files.readString(pathRead, Charset.forName("windows-31j"));
 
-        AllBookShitoV05 allShitoBook = xmlMapper.readValue(readText, new TypeReference<>() {
+        AllBookShitoV05Dto allShitoBook = xmlMapper.readValue(readText, new TypeReference<>() {
         });
 
         // 読んだデータを使ってデータ吐き出し

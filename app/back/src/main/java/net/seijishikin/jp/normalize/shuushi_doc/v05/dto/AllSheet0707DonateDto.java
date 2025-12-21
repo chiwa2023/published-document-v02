@@ -18,11 +18,11 @@ public class AllSheet0707DonateDto implements Serializable { // NOPMD DataClass
     @JacksonXmlProperty(localName = "KUBUN1")
     private AllSheetKbn070701Dto allSheetKbn070701Dto;
 
-    /** 様式7の7の1 */
+    /** 様式7の7の2 */
     @JacksonXmlProperty(localName = "KUBUN2")
     private AllSheetKbn070702Dto allSheetKbn070702Dto;
 
-    /** 様式7の7の1 */
+    /** 様式7の7の3 */
     @JacksonXmlProperty(localName = "KUBUN3")
     private AllSheetKbn070703Dto allSheetKbn070703Dto;
 
