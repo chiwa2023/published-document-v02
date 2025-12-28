@@ -65,7 +65,7 @@ class Sheet0802DtoTest {
 
         // 入力なし
         Path pathAnswer = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
-                "dto/publish/party_usage/seet_080201_dto.txt");
+                "dto/publish/party_usage/sheet_080201_dto.txt");
         String answer = Files.readString(pathAnswer);
 
         assertEquals(answer, xml, "データ入力なし時の比較");
