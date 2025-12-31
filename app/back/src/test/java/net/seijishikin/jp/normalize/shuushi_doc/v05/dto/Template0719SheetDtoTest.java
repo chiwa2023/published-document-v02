@@ -1,6 +1,6 @@
 package net.seijishikin.jp.normalize.shuushi_doc.v05.dto;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
+
 
 /**
  * Template0719SheetDto単体テスト

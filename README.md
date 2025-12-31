@@ -29,7 +29,7 @@
         <!--　政治資金関係XML読み書き -->
             <dependency>
                 <groupId>net.seijishikin.jp.normalize.manage.kanrensha.lib</groupId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>x.y.z-SNAPSHOT</version>
                 <artifactId>published_document</artifactId>
             </dependency>
         ...
@@ -52,7 +52,7 @@
                 </goals>
                 <configuration>
                     <file>
-                    ${basedir}/lib/published_document-x.x.x-SNAPSHOT.jar</file>
+                    ${basedir}/lib/published_document-x.y.z-SNAPSHOT.jar</file>
                     <groupId>
                     net.seijishikin.jp.normalize.manage.kanrensha.lib</groupId>
                     <artifactId>published_document</artifactId>

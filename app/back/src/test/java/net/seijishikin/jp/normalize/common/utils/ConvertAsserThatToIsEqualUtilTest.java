@@ -20,9 +20,6 @@ class ConvertAsserThatToIsEqualUtilTest {
         ConvertAsserThatToIsEqualUtil convertAsserThatToIsEqualUtil = new ConvertAsserThatToIsEqualUtil();
 
         Path pathDirectory = Paths.get(GetCurrentResourcePath.getBackTestFilePath() + root);
-
-        System.out.println("======"+pathDirectory);
-        
         
         
         convertAsserThatToIsEqualUtil.practice(pathDirectory);

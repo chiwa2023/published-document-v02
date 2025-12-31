@@ -1,7 +1,6 @@
 package net.seijishikin.jp.normalize.shuushi_doc.v05.dto; // NOPMD
 
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,8 +12,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import net.seijishikin.jp.normalize.common.utils.GetCurrentResourcePath;
-
-
 
 /**
  * AllBookDto単体テスト
@@ -667,7 +664,7 @@ class AllBookShushiV05DtoTest {
         allBookDto.setAllSheet411710DonationClassifyDto(allSheet411710DonationClassifyDto);
 
         XmlMapper xmlMapper = new XmlMapper();
-       xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         String xml0 = xmlMapper.writeValueAsString(allBookDto);
 
@@ -675,7 +672,7 @@ class AllBookShushiV05DtoTest {
                 "dto/publish/balancesheet/SYUUSI_least_change.txt");
         String answer0 = Files.readString(pathAnswer0);
 
-        assertEquals(answer0,xml0);
+        assertEquals(answer0, xml0);
 
     }
 }
